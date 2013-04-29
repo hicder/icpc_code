@@ -67,6 +67,7 @@ void input(){
         cin >> u >> v;
         vi k(v, 1);
         AdjList[u].push(k);
+        //ignore the next two lines if doing directed graph
         vi k2(u, 1);
         AdjList[v].push(k2);
     }
