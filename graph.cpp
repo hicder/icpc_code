@@ -14,7 +14,7 @@ vector<vii> AdjList;
 int nvertices, nedges;
 
 vi bfs_num;
-
+vi dfs_num;
 
 void initialize(){
     AdjList.resize(nvertices);
@@ -34,12 +34,22 @@ void bfs(int start){
         bfs_num[u] = DFS_BLACK;
         for (int i = 0; i < AdjList[u].size(); i++) {
             ii v = AdjList[u][i];
-            if (bfs_num[v.first]) {
+            if (!bfs_num[v.first]) {
                 s[v.first] = s[u] + 1;  //distance from the start
                 qnodes.push(v.first);
             }
         }
         
+    }
+}
+
+void dfs(int u){
+    dfs_num[u] = DFS_BLACK;
+    for (int i = 0; i < AdjList[u].size(); i++) {
+        ii v = AdjList[u][i];
+        if (!dfs_num[v.first]) {
+            dfs(v.first);
+        }
     }
 }
 
