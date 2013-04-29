@@ -6,7 +6,7 @@
 
 #DEFINE DFS_WHITE 0
 #DEFINE DFS_BLACK 1
-
+using namespace std;
 typedef pair<int,int> ii;
 typedef vector<ii> vii;
 typedef vector<int> vi;
