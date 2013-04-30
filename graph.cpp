@@ -3,7 +3,8 @@
 #include<queue>
 #include<stack>
 #include<vector>
-
+#include<utility>
+#include<algorithm>
 #DEFINE DFS_WHITE 0
 #DEFINE DFS_BLACK 1
 using namespace std;
