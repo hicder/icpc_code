@@ -11,7 +11,7 @@ using namespace std;
 typedef pair<int,int> ii;
 typedef vector<ii> vii;
 typedef vector<int> vi;
-vector<vii> AdjList;
+vector<vii> AdjList;		//Adjacency list will be a vector of pairs of integer, in the form of (a, weight)
 int nvertices, nedges;
 
 vi bfs_num;
