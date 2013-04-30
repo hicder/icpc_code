@@ -51,7 +51,7 @@ void input(){
     int u, v, w;
     for (int i = 0; i < nedges; i++) {
         cin >> u >> v >> w;
-        EdgeList[0] = make_pair(w, ii(u,v));
+        EdgeList[i] = make_pair(w, ii(u,v));
     }
 }
 
