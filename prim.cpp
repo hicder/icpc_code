@@ -11,57 +11,52 @@ typedef pair<int,int> ii;
 typedef vector<ii> vii;
 typedef vector<int> vi;
 typedef pair<int, ii> pii;
-vector<pair<int, ii> > EdgeList;    //(weight, a, b)
+typedef priority_queue<ii> pqii;
 vector<vii> AdjList;                //u -> (weight, v)
 map<pii> visited;
-vi parent;
-vi piset;
+
 int nvertices = 10;
 int nedges = 10;
-void initSet(int N){for (int i = 0; i < N; i++) {pset.push_back(i);}}
+int mst = 0;
+vi taken;
+pqii q;
 
-int findSet(int a){
-    if (piset[a] == a) {
-        return a;
-    }
-    else{
-        pset[a] = findSet(piset[a]);
-        return pset[a];
-    }
-}
-bool isSameSet(int a, int b){return findSet(a) == findSet(b);}
-void setUnion(int a, int b){pset[findSet(a)] = findSet(b);}
 void initialize(){
-    EdgeList.resize(nedges);
     AdjList.resize(nvertices);
     for (int i = 0; i < nvertices; i++) {
-        parent.push_back(i);
+        taken.push_back(0);
     }
 }
 
 
-vii prim(int start){
-    vii ret;
-    priority_queue<ii> q;
-    q.push_back(make_pair(0, start));
-    while (!q.empty() && ret.size() < nvertices) {
-        ii temp = q.top(); q.pop();
-        ret.push_back(temp);
-        for (int i = 0; i < AdjList[temp.second]; i++) {
-            
-            if (!visited[AdjList[temp.second][i]]) {
-                parent[AdjList[temp.second][i].second] = ii.second;
-                q.push_back(AdjList[temp.second][i]);
-            }
-        }
-    }
-    return ret;
+void process(int vx){
+	taken[vx] = 1;
+	for(int i = 0; i < AdjList[vx].size(); i++){
+		if(!taken[AdjList[vx][i].second]) q.push(ii(-AdjList[vx][i].first, -AdjList[vx][i].second));
+	}
+}
+
+void prim(int start){
+	taken[start] = 1;
+	process(start);
+	while(!q.empty()){
+		ii temp = q.top(); q.pop();
+		int w = -temp.first;
+		int v = -temp.second;
+		if(!taken[v]){
+			mst+= w;
+			process(v);
+		} 
+	}
+	printf("The length of the MST is: %d\n",mst);
 }
 
 void input(){
-    
+	//similar to other graph files
 }
 
 int main(){
+	input();
+	prim();
 	return 0;
 }
