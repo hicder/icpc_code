@@ -5,3 +5,7 @@ Some practice code for ICPC. Inspired from "Competitive Programming 2" by Steven
 GRAPH TRAVERSAL  
 uva_10004.cpp  
 poj_1308.cpp
+
+MINIMUM SPANNING TREE
+prim.cpp
+kruskal.cpp
