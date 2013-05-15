@@ -6,6 +6,6 @@ GRAPH TRAVERSAL
 uva_10004.cpp  
 poj_1308.cpp
 
-MINIMUM SPANNING TREE
-prim.cpp
-kruskal.cpp
+MINIMUM SPANNING TREE  
+prim.cpp  
+kruskal.cpp  
