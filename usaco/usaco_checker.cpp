@@ -55,21 +55,6 @@ void print(){
 	cout << endl;
 }
 
-void printcerr(){
-	for(int i = 0; i < n; i++){
-		for(int j = 0; j < n; j++){
-			if(board[j][i]){
-				cerr << (j+1);
-				if(i != (n - 1)) {
-					cerr << " ";
-				}
-				break;
-			}
-		}
-	}
-	cerr << endl;
-}
-
 void place(int col){
 	if(col == n) {
 		nsol ++;
