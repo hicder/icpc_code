@@ -43,10 +43,8 @@ void print(){
 		for(int j = 0; j < n; j++){
 			if(board[j][i]){
 				cout << (j+1);
-
 				if(i != (n - 1)) {
 					cout << " ";
-
 				}
 				break;
 			}
