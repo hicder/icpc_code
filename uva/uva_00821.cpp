@@ -56,8 +56,10 @@ int findnvertice(){
 }
 
 int main(){
-	freopen("input","r",stdin);
+//	freopen("input","r",stdin);
+	int c = 0;
 	do{
+		c++;
 		input();
 		if(notdone) break;
 //		cout << max_vertice << endl;
@@ -79,7 +81,8 @@ int main(){
 			}
 		}
 		sum = sum / (nvertice * (nvertice - 1));
-		printf("%.3f\n",sum);
+		printf("Case %u: average length between pages = %.3lf clicks\n",c,sum);
 		
 	}while(!notdone);
+	return 0;
 }
