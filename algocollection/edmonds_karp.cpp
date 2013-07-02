@@ -18,7 +18,7 @@ void input(){
 	cin >> V >> s >> t;
 	for(int i = 0; i < V; i++){
 		int k, v, w; cin >> k;
-		for(int i = 0; i < k; i++){
+		for(int j = 0; j < k; j++){
 			cin >> v >> w;
 			res[i][v] = w;
 		}
@@ -47,7 +47,9 @@ int main(){
 			int u = q.front(); q.pop();
 			if(u == t) break;
 			for(int i = 0; i < V; i++){
-				if(res[u][i] > 0 && dist[i] == INF) q.push(i), dist[i] = dist[u] + 1, p[i] = u;
+				if(res[u][i] > 0 && dist[i] == INF) {
+					q.push(i); dist[i] = dist[u] + 1; p[i] = u;
+				}
 			}
 		}
 		augment(t, INF);
