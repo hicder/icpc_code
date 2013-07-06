@@ -1,14 +1,4 @@
 icpc-code
 =========
-Some practice code for ICPC. Inspired from "Competitive Programming 2" by Steven Halim and Felix Halim
-
-GRAPH TRAVERSAL  
-uva_10004.cpp  
-poj_1308.cpp  
-
-MINIMUM SPANNING TREE  
-prim.cpp  
-kruskal.cpp  
-
-SHORTEST PATH  
-uva_1009.cpp
+My accepted solutions for various online judges, such as UVA, USACO Training Page, POJ.  
+Please do not hesitate to contact me if you have a better solution for my code.
