@@ -20,34 +20,40 @@ using namespace std;
 typedef vector<int> vi;
 
 vi AdjM[201];
-int t,V,E, color[201], visit[201];
+int t,V,E, visit[201];
+vi color;
 bool imp = false;
 bool exist(int u, int v){
 	FOR(i, AdjM[u].size()) if(AdjM[u][i] == v) return true;
 	return false;
 }
 
-void bfs(int s){
+int bfs(int s){
 	visit[s] = 1;
 	queue<int> q;
 	q.push(s);
-	color[s] = 2;
+	color[s] = 0;
+	int colcount[2] = {0,0};
+	colcount[0]++;
 	while(!q.empty()){
 		int u = q.front(); q.pop();
 		FOR(i, AdjM[u].size()){
 			int v = AdjM[u][i];
-			if(!color[v]){
-				color[v] = color[u] ^ 1;
+			if(color[v] == INF){
+				color[v] = 1 - color[u];
+				colcount[color[v]]++;
 				q.push(v);
 			}
 			else{
 				if(color[v] == color[u]){
 					imp = true;
-					return;
+					return -1;
 				}
 			}
 		}
 	}
+
+	return (colcount[0] && colcount[1])?min(colcount[0], colcount[1]):max(colcount[0],colcount[1]);
 }
 
 int main(){
@@ -57,7 +63,7 @@ int main(){
 	while(t--){
 		cin >> V >> E;
 		imp = false;
-		MS(color);memset(visit, 0, sizeof visit);
+		memset(visit, 0, sizeof visit);
 		int u,v;
 		FOR(i,V) AdjM[i].clear();
 		FOR(i,E){
@@ -67,19 +73,18 @@ int main(){
 				AdjM[v].pb(u);
 			}
 		}
-
+		color.assign(V, INF);
+		int ans = 0;
 		FOR(i, V){
-			if (!color[i]) bfs(i);
+			if (color[i] == INF) {
+				ans+= bfs(i);
+			}
 			if(imp) break;
 		}
 		int nb = 0, nw = 0;
 		if(imp) cout << -1 << endl;
 		else{
-			FOR(i, V){
-				if(color[i] == 2) nb++;
-				else if(color[i] == 3) nw++;
-			}
-			cout << min(nb, nw)<<endl;
+			cout << ans << endl;
 		}
 	}
 
