@@ -61,7 +61,7 @@ int kruskal(){
     initSet(nvertices);
     for (int i = 0; i < EdgeList.size(); i++) {
         pair<int, ii> t = EdgeList[i];
-        if (isSameSet(t.second.first, t.second.second)) {
+        if (!isSameSet(t.second.first, t.second.second)) {
             ret+= t.first;
             setUnion(t.second.first, t.second.second);
         }
