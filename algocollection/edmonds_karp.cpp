@@ -11,8 +11,9 @@ using namespace std;
 
 typedef vector<int> vi;
 
-int V, res[MAXV][MAXV],s, t, f, mf;
-vi p, dist;
+int V, res[MAXV * 4][MAXV * 4],s, t, f, mf;
+vi p;
+
 void input(){
 	memset(res, 0, sizeof res);
 	cin >> V >> s >> t;

@@ -1,11 +1,11 @@
-#include<iostream>
-#include<queue>
-#include<stack>
-#include<utility>
-#include<algorithm>
-#include<cstdlib>
-#include<priority_queue>
-#include<map>
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <algorithm>
+#include <cstdlib>
+#include <priority_queue>
+#include <map>
 #define MAX_INT 10000000;
 typedef pair<int,int> ii;
 typedef vector<ii> vii;
@@ -21,8 +21,7 @@ int mst = 0;
 vi taken;
 pqii q;
 
-void initialize(){
-    AdjList.resize(nvertices);
+void initialize(){AdjList.resize(nvertices);
     for (int i = 0; i < nvertices; i++) {
         taken.push_back(0);
     }

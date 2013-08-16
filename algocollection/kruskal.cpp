@@ -1,9 +1,9 @@
-#include<algorithm>
-#include<map>
-#include<pair>
-#include<utility>
-#include<string>
-#include<iostream>
+#include <algorithm>
+#include <map>
+#include <pair>
+#include <utility>
+#include <string>
+#include <iostream>
 using namespace std;
 
 typedef pair<int,int> ii;
