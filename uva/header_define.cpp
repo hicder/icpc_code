@@ -25,6 +25,6 @@ typedef vector<ii> vii;
 
 
 int main(){
-freopen("input", "r", stdin);
+	freopen("input", "r", stdin);
 	return 0;
 }
