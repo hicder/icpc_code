@@ -10,6 +10,7 @@
 #include <sstream>
 #include <cstring>
 #include <string>
+#include <cmath>
 #define INF 1000000000
 #define MAXV 50102
 #define pb push_back
