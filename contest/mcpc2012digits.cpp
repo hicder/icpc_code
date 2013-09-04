@@ -42,6 +42,7 @@ void calc(int n){
 }
 
 int main(){
+	freopen("input", "r", stdin);
 	init();
 	int n;
 	cin >> n;
